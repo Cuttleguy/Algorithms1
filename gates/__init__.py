@@ -1,3 +1,4 @@
-from and_gate import *
-from or_gate import *
-from not_gate import *
+from gates.and_gate import *
+from gates.or_gate import *
+from gates.not_gate import *
+from gates.connector import *

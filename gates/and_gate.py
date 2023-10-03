@@ -1,4 +1,4 @@
-from binary_gate import *
+from gates.binary_gate import *
 
 
 class AndGate(BinaryGate):

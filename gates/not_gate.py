@@ -1,4 +1,4 @@
-from unary_gate import *
+from gates.unary_gate import *
 
 class NotGate(UnaryGate):
     def __init__(self,llbl):
