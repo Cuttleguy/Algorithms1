@@ -1,5 +1,7 @@
 from fraction import *
 from gates import *
+from gates.cicuit import Circuit
+
 x = Fraction(1, 2)
 x.show()
 y = Fraction(2, 3)
@@ -13,7 +15,7 @@ print(x > y)
 print(x < y)
 #Logic Gates
 
-
+#
 # g1 = AndGate("G1")
 # print(g1.get_output())
 #
@@ -26,7 +28,7 @@ print(x < y)
 #
 # g3 = NotGate("G3")
 # print(g3.get_output())
-
+#
 # g1 = AndGate("G1")
 # g2 = AndGate("G2")
 # g3 = OrGate("G3")
@@ -51,3 +53,9 @@ print(x < y)
 # print(g9.get_output())
 #
 half_adder=Circuit("HalfAdder1")
+half_adder.add_gate(ExtenderGate("A"))
+half_adder.add_gate(ExtenderGate("B"))
+half_adder.add_gate(TwoWaySplitGate("SplitA"))
+half_adder.add_gate(UnoOutputGate({""}))
+half_adder.add_gate(XorGate("Xor1"))
+half_adder.add_gate(AndGate("And1"))

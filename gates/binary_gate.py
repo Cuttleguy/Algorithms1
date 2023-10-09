@@ -1,5 +1,6 @@
-from gates.logic_gate import *
-class BinaryGate(LogicGate):
+from gates import *
+from gates.unoutput_gate import *
+class BinaryGate(UnoOutputGate):
 
     def __init__(self, lbl):
         super(BinaryGate, self).__init__(lbl)

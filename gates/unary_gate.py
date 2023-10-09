@@ -1,8 +1,9 @@
+from gates import UnoOutputGate
 from gates.logic_gate import *
-class UnaryGate(LogicGate):
+class UnaryGate(UnoOutputGate):
 
     def __init__(self, lbl):
-        LogicGate.__init__(self, lbl)
+        UnoOutputGate.__init__(self, lbl)
 
         self.pin = None
 

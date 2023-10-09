@@ -1,4 +1,6 @@
 from gates import *
+from gates import Connector
+
 
 class Circuit(LogicGate):
     def __init__(self, lbl):

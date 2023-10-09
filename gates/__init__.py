@@ -6,3 +6,5 @@ from gates.nor_gate import *
 from gates.nand_gate import *
 from gates.xor_gate import *
 from gates.cicuit import *
+from gates.extender_gate import *
+from gates.unoutput_gate import *
