@@ -18,3 +18,6 @@ class UnaryGate(UnoOutputGate):
             self.pin = source
         else:
             print("Cannot Connect: NO EMPTY PINS on this gate")
+    def set_next_output(self,source):
+        if self.output == None:
+            self.output = source

@@ -16,4 +16,4 @@ class Circuit(LogicGate):
     def perform_gate_logic(self):
         for gate in self.gates:
             if gate not in self.gatesAutomatedOutput:
-                gate.getOutput()
+                gate.get_output()

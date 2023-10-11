@@ -8,3 +8,4 @@ from gates.xor_gate import *
 from gates.cicuit import *
 from gates.extender_gate import *
 from gates.unoutput_gate import *
+from gates.two_split_gate import *

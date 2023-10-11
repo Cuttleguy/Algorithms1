@@ -1,7 +1,8 @@
 from fraction import *
 from gates import *
 from gates.cicuit import Circuit
-
+from gates.two_split_gate import TwoWaySplitGate
+import time
 x = Fraction(1, 2)
 x.show()
 y = Fraction(2, 3)
@@ -51,11 +52,33 @@ print(x < y)
 # c4=Connector(g7,g9)
 # c5=Connector(g8,g9)
 # print(g9.get_output())
+# #
+# split=TwoWaySplitGate("Split")
+# andGate=AndGate("And")
+# c1=Connector(split,andGate)
+# c2=Connector(split,andGate)
 #
-half_adder=Circuit("HalfAdder1")
-half_adder.add_gate(ExtenderGate("A"))
-half_adder.add_gate(ExtenderGate("B"))
-half_adder.add_gate(TwoWaySplitGate("SplitA"))
-half_adder.add_gate(UnoOutputGate({""}))
-half_adder.add_gate(XorGate("Xor1"))
-half_adder.add_gate(AndGate("And1"))
+# print(andGate.get_output())
+print(sum_of_n(10))
+for i in range(5):
+    print("Sum is %d required %10.7f seconds" % sum_of_n_2(100000))
+print("Other Algorithm")
+for i in range(5):
+    print("Sum is %d required %10.7f seconds" % sum_of_n_3(10**100))
+
+coll=[0,5,6,7,7,100,-4500,-10000,100000]
+print("Min is %d required %10.7f seconds" % findMinLin(coll))
+print("Min is %d required %10.7f seconds" % findMinQuad(coll))
+
+print(anagram_solution_1("apple", "pleap"))  # expected: True
+print(anagram_solution_1("abcd", "dcba"))  # expected: True
+print(anagram_solution_1("abcd", "dcda"))  # expected: False
+
+
+print(anagram_solution_2("apple", "pleap"))  # expected: True
+print(anagram_solution_2("abcd", "dcba"))  # expected: True
+print(anagram_solution_2("abcd", "dcda"))  # expected: False
+
+print(anagram_solution_4("apple", "pleap"))  # expected: True
+print(anagram_solution_4("abcd", "dcba"))  # expected: True
+print(anagram_solution_4("abcd", "dcda"))  # expected: False

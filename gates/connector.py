@@ -4,7 +4,8 @@ class Connector:
     def __init__(self, fgate, tgate):
         self.from_gate = fgate
         self.to_gate = tgate
-        # fgate.set_next_output(self)
+        self.output_pin=0
+        fgate.set_next_output(self)
         tgate.set_next_pin(self)
 
     def get_from(self):

@@ -1,4 +1,6 @@
 from gates import *
+from gates import LogicGate
+from gates.pin import Pin
 
 
 class TwoWaySplitGate(LogicGate):
@@ -6,8 +8,8 @@ class TwoWaySplitGate(LogicGate):
         LogicGate.__init__(self, lbl)
 
         self.pin = None
-        self.outputA = None
-        self.outputB = None
+        self.outputA = Pin()
+        self.outputB = Pin()
 
     def get_pin(self):
         if self.pin == None:
@@ -22,17 +24,18 @@ class TwoWaySplitGate(LogicGate):
             print("Cannot Connect: NO EMPTY PINS on this gate")
 
     def set_next_output(self, source):
-        if self.outputA is not None:
-            source = self.outputB
-        else:
-            if self.outputB is not None:
-                source = self.outputB
-            else:
-                print("Cannot Connect: NO EMPTY PINS on this gate")
-
+        if self.outputA is None:
+            self.outputA=source
+        elif self.outputB is None:
+            self.outputB=source
     def perform_gate_logic(self):
-        self.outputA, self.outputB = self.pin
+        a=self.get_pin()
+        return a
 
     def get_output(self):
-        self.perform_gate_logic()
-        return [self.outputA, self.outputB]
+        if self.outputA.get_output() is not None:
+            self.outputA.get_to().set_next_pin(self.perform_gate_logic())
+
+        if self.outputB.get_output() is not None:
+            self.outputB.get_to().set_next_pin(self.perform_gate_logic())
+        return self.perform_gate_logic()
